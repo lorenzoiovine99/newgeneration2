@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Collega il CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img class="logo-primary" src="images/logo3.png" alt="Logo Cliente">
+            </a>
+            <a href="index.html">
+                <img class="logo-secondary" src="images/nome.png" alt="Nome Cliente">
+            </a>
+        </div>
+        
+        <nav class="menu">
+            <a href="chisiamo.html">Chi siamo</a>
+            <a href="#corsi">Corsi</a>
+            <a href="#formazione">Formazione</a>
+            <a href="#scopri-di-piu">Scopri di più</a>
+            <a href="#contatti">Contatti</a>
+        </nav>
+        <!-- Menu Hamburger -->
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu">
+            <a href="chisiamo.html">Chi siamo</a>
+            <a href="#corsi">Corsi</a>
+            <a href="#formazione">Formazione</a>
+            <a href="#scopri-di-piu">Scopri di più</a>
+            <a href="#contatti">Contatti</a>
+        </div>
+    </header>
+
+    <!-- Slider -->
+    <section class="slider">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/photo1.jpg" alt="Foto 1">
+                </div>
+                <div class="swiper-slide">
+                    <video autoplay loop muted playsinline>
+                        <source src="images/danza.mp4" type="video/mp4">
+                        Il tuo browser non supporta i video.
+                    </video>
+                </div>
+                <div class="swiper-slide">
+                    <video autoplay loop muted playsinline>
+                        <source src="images/gym fit.mp4" type="video/mp4">
+                        Il tuo browser non supporta i video.
+                    </video>
+                </div>
+                <div class="swiper-slide">
+                    <video autoplay loop muted playsinline>
+                        <source src="images/pilates.mp4" type="video/mp4">
+                        Il tuo browser non supporta i video.
+                    </video>
+                </div>
+                <div class="swiper-slide">
+                    <video autoplay loop muted playsinline>
+                        <source src="images/zumba.mp4" type="video/mp4">
+                        Il tuo browser non supporta i video.
+                    </video>
+                </div>
+            </div>
+            <!-- Bottoni per navigare -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

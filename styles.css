@@ -1,0 +1,245 @@
+/* Rimuove margini e padding predefiniti */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Assicura che il padding sia incluso nelle dimensioni */
+}
+
+
+/* Imposta l'header */
+.header {
+    position: fixed; /* Fissa l'header in alto */
+    top: 0;
+    left: 0;
+    width: 100%; /* Occupa tutta la larghezza */
+    height: 98px; /* Altezza fissa per l'header */
+    z-index: 1000; /* Porta l'header in primo piano */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #3c3b3b;
+    background-size: cover;
+    background-image: url('images/header.jpg'); /* URL del logo PNG */
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra */
+    box-sizing: border-box; /* Include il padding nel calcolo delle dimensioni */
+}
+
+
+.logo {
+    display: flex; /* Attiva Flexbox per allineare i loghi */
+    align-items: center; /* Allinea verticalmente i loghi al centro */
+    gap: 35px; /* Spaziatura tra i loghi */
+    margin-left: 30px; /* Sposta i loghi un po' più a destra */
+}
+
+/* Primo logo: gestisci altezza e larghezza */
+.logo-primary {
+    max-height: 75px; /* Altezza personalizzata */
+    width: auto; /* Mantiene le proporzioni */
+}
+
+/* Secondo logo: gestisci altezza e larghezza */
+.logo-secondary {
+    height: 45px; /* Altezza diversa per il secondo logo */
+    width: auto; /* Mantiene le proporzioni */
+}
+
+.menu {
+    display: flex;
+    gap: 40px;
+    margin-right: 30px; /* Sposta i loghi un po' più a destra */
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.menu a:hover {
+    color: #30e0e0;
+}
+
+/* Menu Hamburger */
+.hamburger {
+    display: none; /* Nascosto per default */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+.hamburger:hover div {
+    background-color: #30e0e0; /* Cambia colore al passaggio del mouse */
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none; /* Nascosto inizialmente */
+    flex-direction: column;
+    background-color: #3c3b3b; /* Sfondo scuro */
+    position: absolute;
+    top: 13vh; /* Posizionato sotto l'header */
+    right: 20px; /* Posizionato a destra */
+    width: 220px; /* Larghezza del menu */
+    padding: 10px 0; /* Spaziatura interna */
+    border-radius: 8px; /* Bordi arrotondati */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Aggiunge un'ombra */
+    opacity: 0; /* Inizia invisibile */
+    transform: translateY(-10px); /* Sollevato di 10px */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Aggiunge animazione */
+    z-index: 1000; /* Porta il menu in primo piano */
+}
+
+.dropdown-menu.show {
+    display: flex; /* Mostra il menu */
+    opacity: 1; /* Rende il menu visibile */
+    transform: translateY(0); /* Rimuove la traslazione */
+}
+
+.dropdown-menu a {
+    padding: 12px 20px; /* Spaziatura interna */
+    text-decoration: none;
+    color: #fff; /* Testo bianco */
+    font-weight: bold;
+    border-bottom: 1px solid #444; /* Linea di separazione */
+    transition: background-color 0.3s ease; /* Aggiunge transizione */
+}
+
+.dropdown-menu a:hover {
+    background-color: #30e0e0;
+    color: #fff;
+}
+
+/* Nasconde il secondo logo su schermi stretti */
+@media (max-width: 600px) {
+    .logo-secondary {
+        display: none; /* Nasconde il secondo logo */
+    }
+}
+
+
+/* Responsività */
+@media (max-width: 1200px) {
+    .menu {
+        display: none; /* Nasconde il menu normale */
+    }
+
+    .hamburger {
+        display: flex; /* Mostra l'hamburger */
+    }
+
+    .hamburger:hover + .dropdown-menu {
+        display: flex; /* Mostra il menu a tendina */
+    }
+}
+
+/* Sfondo globale con loghi */
+body {
+    background-color: rgba(119, 116, 116, 0.9); /* Sfondo grigio chiaro con trasparenza */
+    background-size: cover;
+    background-image: url('images/sfondo.jpg'); /* URL del logo PNG */
+    background-attachment: fixed !important; /* Rende lo sfondo fisso */
+    align-content: center;
+}
+
+.slider {
+    margin-top: 98px; /* Sposta lo slider sotto l'header */
+    height: calc(100vh - 98px); /* Occupa tutto lo spazio rimanente */
+    overflow: hidden; /* Nasconde eventuali parti fuori dal contenitore */
+    background-attachment: fixed; /* Rende lo sfondo fisso */
+}
+
+.swiper-slide {
+    display: flex !important; /* Attiva Flexbox */
+    justify-content: center !important; /* Centra orizzontalmente */
+    align-items: center !important; /* Centra verticalmente */
+    width: 100% !important; /* Occupa tutta la larghezza */
+    height: 100% !important; /* Occupa tutta l'altezza */
+    overflow: hidden !important; /* Nasconde parti eccedenti */
+}
+
+
+
+/* Immagini e Video */
+.swiper-slide img,
+.swiper-slide video {
+    max-width: 100%;
+    max-height: calc(100vh - 98px); /* Non supera l'altezza del contenitore */
+    object-fit: contain; /* Mantiene le proporzioni e non taglia */
+    display: block; /* Elimina eventuali spazi extra creati dal layout inline */
+}
+
+.content {
+    display: flex;
+    align-items: center; /* Centra verticalmente il contenuto */
+    justify-content: center; /* Centra orizzontalmente l'intero contenuto */
+    height: calc(100vh - 98px); /* Altezza disponibile sotto l'header */
+    margin-top: 98px; /* Sposta il contenuto sotto l'header */
+}
+
+/* Contenitore Interno */
+.content-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente testo e video */
+    justify-content: space-between; /* Posiziona testo a sinistra e video a destra */
+    width: 90%; /* Larghezza massima del contenitore */
+    /*max-width: 1200px; /* Larghezza massima su schermi grandi */
+    gap: 70px; /* Spaziatura tra testo e video */
+}
+
+/* Colonna del Testo */
+.text-column {
+    flex: 1; /* Occupa lo spazio disponibile */
+    display: flex; /* Attiva Flexbox */
+    flex-direction: column; /* Dispone gli elementi in colonna */
+    align-items: left; /* Centra gli elementi orizzontalmente */
+    text-align: left; /* Centra il contenuto del testo */
+    gap: 1px; /* Spaziatura uniforme tra gli elementi */
+}
+
+.text-column h1 {
+    font-size: 1.5em;
+    color: #30e0e0;
+    position: relative; /* Necessario per posizionare la linea */
+    display: inline-block; /* Restringe la larghezza al testo */
+    text-align: left; /* Allinea il testo (modifica se necessario) */
+    border-bottom: 3px solid #30e0e0; /* Linea colorata sotto */
+    padding-bottom: 5px; /* Spazio tra il testo e la linea */
+}
+
+.text-column p {
+    font-size: 1.2em;
+    line-height: 1.0;
+    color: #ffffff;
+    max-width: 600px;
+    margin-top: 8px; /* Margine superiore */
+    margin-bottom: 8px; /* Margine inferiore */
+}
+
+/* Colonna del Video */
+.video-column {
+    flex: 1; /* Occupa lo spazio disponibile */
+    display: flex;
+    align-items: center; /* Centra verticalmente il video */
+}
+
+.video-column video {
+    width: 600px; /* Larghezza personalizzata */
+    height: 330px; /* Mantiene le proporzioni del video */
+    border-radius: 40px; /* Angoli arrotondati per estetica */
+    box-shadow: 0 4px 8px rgba(74, 73, 73, 0.2); /* Aggiunge un'ombra */
+}
+
+.important {
+    color: #30e0e0; /* Altro colore */
+}
+
