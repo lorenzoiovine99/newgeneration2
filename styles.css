@@ -60,7 +60,7 @@ html, body {
 }
 
 .menu a:hover {
-    color: #30e0e0;
+    color: #000000;
 }
 
 /* Menu Hamburger */
@@ -78,7 +78,7 @@ html, body {
 }
 
 .hamburger:hover div {
-    background-color: #30e0e0; /* Cambia colore al passaggio del mouse */
+    background-color: #000000; /* Cambia colore al passaggio del mouse */
 }
 
 /* Dropdown Menu */
@@ -115,7 +115,7 @@ html, body {
 }
 
 .dropdown-menu a:hover {
-    background-color: #30e0e0;
+    background-color: #000000;
     color: #fff;
 }
 
@@ -151,68 +151,86 @@ body {
     align-content: center;
 }
 
-.slider {
-    margin-top: 98px; /* Sposta lo slider sotto l'header */
-    height: calc(100vh - 98px); /* Occupa tutto lo spazio rimanente */
-    overflow: hidden; /* Nasconde eventuali parti fuori dal contenitore */
-    background-attachment: fixed; /* Rende lo sfondo fisso */
-}
-
-.swiper-slide {
-    display: flex !important; /* Attiva Flexbox */
-    justify-content: center !important; /* Centra orizzontalmente */
-    align-items: center !important; /* Centra verticalmente */
-    width: 100% !important; /* Occupa tutta la larghezza */
-    height: 100% !important; /* Occupa tutta l'altezza */
-    overflow: hidden !important; /* Nasconde parti eccedenti */
-}
-
-
-
-/* Immagini e Video */
-.swiper-slide img,
-.swiper-slide video {
-    max-width: 100%;
-    max-height: calc(100vh - 98px); /* Non supera l'altezza del contenitore */
-    object-fit: contain; /* Mantiene le proporzioni e non taglia */
-    display: block; /* Elimina eventuali spazi extra creati dal layout inline */
-}
-
-.content {
-    display: flex;
-    align-items: center; /* Centra verticalmente il contenuto */
-    justify-content: center; /* Centra orizzontalmente l'intero contenuto */
-    height: calc(100vh - 98px); /* Altezza disponibile sotto l'header */
-    margin-top: 98px; /* Sposta il contenuto sotto l'header */
-}
 
 /* Contenitore Interno */
-.content-container {
-    display: flex;
-    align-items: center; /* Centra verticalmente testo e video */
-    justify-content: space-between; /* Posiziona testo a sinistra e video a destra */
-    width: 90%; /* Larghezza massima del contenitore */
-    /*max-width: 1200px; /* Larghezza massima su schermi grandi */
-    gap: 70px; /* Spaziatura tra testo e video */
+.home .slide-content {
+    background-color: rgba(119, 116, 116, 0.9); /* Sfondo grigio chiaro con trasparenza */
+    background-size: cover;
+    background-image: url('images/sfondo.jpg'); /* URL del logo PNG */    display: flex;
+    flex-direction: row; /* Testo a sinistra, immagine a destra */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 98px); /* Occupa tutta l'altezza disponibile sotto l'header */
+    margin-top: 98px;
+    padding: 0;
+    overflow: hidden;
 }
 
 /* Colonna del Testo */
-.text-column {
-    flex: 1; /* Occupa lo spazio disponibile */
-    display: flex; /* Attiva Flexbox */
-    flex-direction: column; /* Dispone gli elementi in colonna */
-    align-items: left; /* Centra gli elementi orizzontalmente */
-    text-align: left; /* Centra il contenuto del testo */
-    gap: 1px; /* Spaziatura uniforme tra gli elementi */
+.home .text-column {
+    width: 20%; /* Occupa il 40% dello spazio */
+    height: 100%; /* Occupa tutta l'altezza */
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
+
+/* Contenitore delle immagini/video sulla destra */
+.home .image-column, .home .video-column {
+    width: 80%; /* Occupa il 60% dello schermo */
+    height: calc(100vh - 98px); /* Occupa tutta l'altezza disponibile */
+    display: flex;
+    justify-content: flex-end; /* Spinge l'immagine a destra */
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Assicura che immagini e video si adattino senza tagliarsi o deformarsi */
+.home .image-column img,
+.home .video-column video {
+    height: calc(100vh - 98px); /* Occupa tutta l'altezza disponibile sotto l'header */
+    width: 100%; /* Mantiene le proporzioni senza deformarsi */
+    max-width: none; /* Non supera il contenitore */
+    object-fit: fill; /* Evita di tagliare l'immagine */
+}
+
+/* Posizionamento delle frecce ai bordi estremi */
+.home .swiper-button-next, .home .swiper-button-prev {
+    color: rgb(39, 57, 127);
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    opacity: 0.5;
+}
+
+/* Posizionamento esatto delle frecce */
+.home .swiper-button-prev {
+    left: 2px; /* Porta la freccia sinistra al bordo estremo */
+}
+
+.home .swiper-button-next {
+    right: 2px; /* Porta la freccia destra al bordo estremo */
+}
+
+/* Effetto hover più elegante */
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    transform: scale(1.2); /* Ingrandisce leggermente la freccia */
+    opacity: 1; /* La rende completamente visibile */
+}
+
 
 .text-column h1 {
     font-size: 1.5em;
-    color: #30e0e0;
+    color: #000000;
     position: relative; /* Necessario per posizionare la linea */
     display: inline-block; /* Restringe la larghezza al testo */
     text-align: left; /* Allinea il testo (modifica se necessario) */
-    border-bottom: 3px solid #30e0e0; /* Linea colorata sotto */
+    border-bottom: 3px solid #000000; /* Linea colorata sotto */
     padding-bottom: 5px; /* Spazio tra il testo e la linea */
 }
 
@@ -226,20 +244,91 @@ body {
 }
 
 /* Colonna del Video */
-.video-column {
+.chisiamo .video-column {
     flex: 1; /* Occupa lo spazio disponibile */
     display: flex;
     align-items: center; /* Centra verticalmente il video */
 }
 
-.video-column video {
+.chisiamo .video-column video {
     width: 600px; /* Larghezza personalizzata */
     height: 330px; /* Mantiene le proporzioni del video */
     border-radius: 40px; /* Angoli arrotondati per estetica */
     box-shadow: 0 4px 8px rgba(74, 73, 73, 0.2); /* Aggiunge un'ombra */
 }
 
-.important {
-    color: #30e0e0; /* Altro colore */
+.chisiamo .important {
+    color: #000000; /* Altro colore */
 }
+
+
+/* ✅ Layout per tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .home .slide-content {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        margin-top: 98px;
+    }
+
+    /* VIDEO: Sempre sopra e adatta altezza */
+    .home .image-column, .home .video-column {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        object-fit: contain;
+        align-items: flex-start;
+    }
+
+    .home .image-column img, .home .video-column video {
+        width: 100%; /* Occupa tutta la larghezza dello schermo */
+        height: 100%;
+        object-fit: contain;
+        top: 0;
+    }
+
+    /* TESTO: Inizia subito sotto */
+    .home .text-column {
+        width: 95%;
+        padding: 10px;
+        font-size: 1em;
+    }
+}
+
+/* ✅ Layout per smartphone (max-width: 768px) */
+@media (max-width: 768px) {
+    .home .slide-content {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        padding-top: 0;
+        margin-top: 98px;
+    }
+
+    /* VIDEO: Sempre sopra e adatta altezza */
+    .home .image-column, .home .video-column {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: start;
+        object-fit: contain;
+        align-items: flex-start;
+    }
+
+    .home .image-column img, .home .video-column video {
+        width: 100%; /* Occupa tutta la larghezza dello schermo */
+        height: 100%;
+        object-fit: contain;
+        top: 0;
+    }
+
+    /* TESTO: Inizia subito sotto */
+    .home .text-column {
+        width: 95%;
+        padding: 10px;
+        font-size: 1em;
+    }
+}
+
 

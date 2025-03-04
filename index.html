@@ -9,7 +9,8 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
-<body>
+
+<body class="home">
     <!-- Header -->
     <header class="header">
         <div class="logo">
@@ -44,36 +45,112 @@
         </div>
     </header>
 
-    <!-- Slider -->
+
+    <!-- Colonna Destra con lo Slider -->
     <section class="slider">
         <div class="swiper">
             <div class="swiper-wrapper">
+                <!--Pilates-->
                 <div class="swiper-slide">
-                    <img src="images/photo1.jpg" alt="Foto 1">
+                    <div class="slide-content">
+                        <div class="text-column">
+                            <h1>Pilates</h1>
+                            <p>Descrizione di pilates.</p>
+                        </div>
+                        <div class="video-column">
+                            <video autoplay loop muted playsinline>
+                                <source src="images/pilates.mp4" type="video/mp4">
+                                Il tuo browser non supporta i video.
+                            </video>
+                        </div>
+                    </div>
                 </div>
+                <!--Funzionale-->
                 <div class="swiper-slide">
-                    <video autoplay loop muted playsinline>
-                        <source src="images/danza.mp4" type="video/mp4">
-                        Il tuo browser non supporta i video.
-                    </video>
+                    <div class="slide-content">
+                        <div class="text-column">
+                            <h1>Funzionale e GAG</h1>
+                            <p>Descrizione di funzionale e GAG.</p>
+                        </div>
+                        <div class="video-column">
+                            <video autoplay loop muted playsinline>
+                                <source src="images/funzionale.mp4" type="video/mp4">
+                                Il tuo browser non supporta i video.
+                            </video>
+                        </div>
+                    </div>
                 </div>
+                <!--Zumba-->
                 <div class="swiper-slide">
-                    <video autoplay loop muted playsinline>
-                        <source src="images/gym fit.mp4" type="video/mp4">
-                        Il tuo browser non supporta i video.
-                    </video>
+                    <div class="slide-content">
+                        <div class="text-column">
+                            <h1>Zumba</h1>
+                            <p>Descrizione di zumba.</p>
+                        </div>
+                        <div class="video-column">
+                            <video autoplay loop muted playsinline>
+                                <source src="images/zumba.mp4" type="video/mp4">
+                                Il tuo browser non supporta i video.
+                            </video>
+                        </div>
+                    </div>
                 </div>
+                <!--Personal-->
                 <div class="swiper-slide">
-                    <video autoplay loop muted playsinline>
-                        <source src="images/pilates.mp4" type="video/mp4">
-                        Il tuo browser non supporta i video.
-                    </video>
+                    <div class="slide-content">
+                        <div class="text-column">
+                            <h1>Personal</h1>
+                            <p>Descrizione di personal.</p>
+                        </div>
+                        <div class="video-column">
+                            <video autoplay loop muted playsinline>
+                                <source src="images/gym fit.mp4" type="video/mp4">
+                                Il tuo browser non supporta i video.
+                            </video>
+                        </div>
+                    </div>
                 </div>
+                <!--Yoga-->
                 <div class="swiper-slide">
-                    <video autoplay loop muted playsinline>
-                        <source src="images/zumba.mp4" type="video/mp4">
-                        Il tuo browser non supporta i video.
-                    </video>
+                    <div class="slide-content">
+                        <div class="text-column">
+                            <h1>Yoga</h1>
+                            <p>Descrizione di yoga.</p>
+                        </div>
+                        <div class="video-column">
+                            <video autoplay loop muted playsinline>
+                                <source src="images/yoga.mp4" type="video/mp4">
+                                Il tuo browser non supporta i video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <!--Danza-->
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <div class="text-column">
+                            <h1>Danza</h1>
+                            <p>Descrizione di danza.</p>
+                        </div>
+                        <div class="video-column">
+                            <video autoplay loop muted playsinline>
+                                <source src="images/danza.mp4" type="video/mp4">
+                                Il tuo browser non supporta i video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <!--Balla&Snella-->
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <div class="text-column">
+                            <h1>Balla&Snella</h1>
+                            <p>Descrizione di balla e snella.</p>
+                        </div>
+                        <div class="image-column">
+                            <img src="images/ballaesnella.jpg" alt="Foto 1">
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Bottoni per navigare -->
