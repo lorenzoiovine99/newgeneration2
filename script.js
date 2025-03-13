@@ -5,7 +5,7 @@ const swiper = new Swiper('.swiper', {
         prevEl: '.swiper-button-prev',
     },
     autoplay: {
-        delay: 4000, // Cambia slide automaticamente ogni 3 secondi
+        delay: 7000, // Cambia slide automaticamente ogni 3 secondi
         disableOnInteraction: false,
     },
     on: {
